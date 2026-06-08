@@ -1,0 +1,2147 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ensaladas en Frasco | Organiza tu alimentación semanal</title>
+  <meta name="description"
+    content="Organiza tus comidas saludables de toda la semana en frascos, en un solo día, con 100 recetas, protocolo de conservación y planificador de compras con IA." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Open+Sans:wght@400;600;700&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --ef-green-950: #183b28;
+      --ef-green-900: #224f35;
+      --ef-green-800: #2f6845;
+      --ef-green-700: #3f7e54;
+      --ef-green-600: #5b9b63;
+      --ef-green-100: #e9f3df;
+      --ef-green-50: #f5faed;
+      --ef-lime: #cddd64;
+      --ef-yellow: #f1c84b;
+      --ef-orange: #ee8e3b;
+      --ef-cream: #fff8ec;
+      --ef-soft: #f2eadb;
+      --ef-white: #ffffff;
+      --ef-ink: #243126;
+      --ef-muted: #5f6f62;
+      --ef-line: rgba(36, 49, 38, 0.12);
+      --ef-shadow: 0 22px 60px rgba(24, 59, 40, 0.16);
+      --ef-radius: 8px;
+      --ef-radius-lg: 18px;
+      --ef-container: 1160px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ef-ink);
+      background: var(--ef-cream);
+      font-family: "Open Sans", Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.65;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    p,
+    h1,
+    h2,
+    h3 {
+      margin-top: 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    .ef-btn,
+    .checkout-button-v2,
+    .ef-badge,
+    .ef-kicker {
+      font-family: "Montserrat", Arial, sans-serif;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin-bottom: 24px;
+      color: var(--ef-white);
+      font-size: clamp(2.45rem, 6vw, 4.85rem);
+      line-height: 0.98;
+      font-weight: 900;
+    }
+
+    h1 span {
+      color: var(--ef-lime);
+    }
+
+    h2 {
+      color: var(--ef-green-950);
+      font-size: clamp(2.4rem, 4vw, 3.5rem);
+      line-height: 1.08;
+      font-weight: 900;
+    }
+
+    h3 {
+      color: var(--ef-green-900);
+      font-size: 1.25rem;
+      line-height: 1.25;
+      font-weight: 800;
+    }
+
+    strong {
+      color: var(--ef-green-950);
+      font-weight: 700;
+    }
+
+    .ef-site {
+      overflow: hidden;
+    }
+
+    .ef-container {
+      width: min(100% - 40px, var(--ef-container));
+      margin-inline: auto;
+    }
+
+    .ef-section {
+      padding: 92px 0;
+      background: var(--ef-cream);
+    }
+
+    .ef-section--light {
+      background: var(--ef-green-50);
+    }
+
+    .ef-section--soft {
+      background: var(--ef-soft);
+    }
+
+    .ef-section--dark {
+      color: rgba(255, 255, 255, 0.82);
+      background:
+        radial-gradient(circle at 20% 0%, rgba(205, 221, 100, 0.18), transparent 28%),
+        linear-gradient(135deg, var(--ef-green-950), #0f281b);
+    }
+
+    .ef-section--offer {
+      background:
+        linear-gradient(180deg, rgba(24, 59, 40, 0.92), rgba(24, 59, 40, 0.96)),
+        var(--ef-green-950);
+    }
+
+    .ef-grid {
+      display: grid;
+      gap: clamp(34px, 6vw, 78px);
+    }
+
+    .ef-grid--2 {
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    }
+
+    .ef-grid--vcenter {
+      align-items: center;
+    }
+
+    .ef-hero {
+      position: relative;
+      min-height: 760px;
+      padding: 86px 0 108px;
+      display: flex;
+      align-items: center;
+      color: var(--ef-white);
+      background:
+        linear-gradient(90deg, rgba(24, 59, 40, 0.98) 0%, rgba(24, 59, 40, 0.9) 45%, rgba(24, 59, 40, 0.12) 100%),
+        url("./assets/img/frasco-sinfondo.png") right 7% bottom / min(48vw, 640px) auto no-repeat,
+        linear-gradient(135deg, #265438, #7aa35a);
+    }
+
+    .ef-hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 130px;
+      background: linear-gradient(0deg, var(--ef-cream), rgba(255, 248, 236, 0));
+      pointer-events: none;
+    }
+
+    .ef-hero__content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .ef-hero__text {
+      max-width: 760px;
+    }
+
+    .ef-badge {
+      display: inline-flex;
+      max-width: 720px;
+      margin-bottom: 28px;
+      padding: 10px 16px;
+      color: var(--ef-green-950);
+      background: var(--ef-lime);
+      border-radius: 999px;
+      font-size: 0.78rem;
+      line-height: 1.3;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .ef-hero__mobile-img {
+      display: none;
+    }
+
+    .ef-hero__lead {
+      max-width: 680px;
+      margin-bottom: 26px;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.18rem;
+    }
+
+    .ef-hero__inline-img {
+      width: min(100%, 620px);
+      margin: 34px 0 36px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: var(--ef-radius-lg);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+      object-fit: cover;
+    }
+
+    .ef-hero__subheadline {
+      max-width: 780px;
+      margin-bottom: 24px;
+      color: var(--ef-lime);
+      font-size: clamp(1.45rem, 3vw, 2.35rem);
+      line-height: 1.18;
+      font-weight: 900;
+    }
+
+    .ef-hero__bullets,
+    .ef-check-list {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .ef-hero__bullets {
+      display: grid;
+      gap: 12px;
+      max-width: 650px;
+      margin-bottom: 34px;
+      color: var(--ef-white);
+      font-weight: 700;
+    }
+
+    .ef-hero__bullets li,
+    .ef-check-list li {
+      position: relative;
+      padding-left: 32px;
+    }
+
+    .ef-hero__bullets li::before,
+    .ef-check-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: grid;
+      width: 22px;
+      height: 22px;
+      place-items: center;
+      color: var(--ef-green-950);
+      background: var(--ef-lime);
+      border-radius: 50%;
+      font-size: 0.9rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .ef-hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 18px 22px;
+    }
+
+    .ef-btn,
+    .checkout-button-v2 {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 58px;
+      padding: 17px 30px;
+      border: 0;
+      border-radius: 999px;
+      box-shadow: 0 16px 34px rgba(24, 59, 40, 0.22);
+      cursor: pointer;
+      font-size: 0.95rem;
+      line-height: 1.1;
+      font-weight: 900;
+      text-align: center;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+
+    .ef-btn:hover,
+    .checkout-button-v2:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 42px rgba(24, 59, 40, 0.3);
+    }
+
+    .ef-btn--primary,
+    .checkout-button-v2 {
+      color: #1d331f;
+      background: linear-gradient(180deg, #ffe167, var(--ef-yellow));
+    }
+
+    .ef-btn--secondary {
+      color: var(--ef-white);
+      background: linear-gradient(180deg, var(--ef-green-700), var(--ef-green-900));
+    }
+
+    .ef-microcopy {
+      max-width: 300px;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.74);
+      font-size: 0.92rem;
+      line-height: 1.45;
+      font-weight: 600;
+    }
+
+    .ef-microcopy--light {
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .ef-media-card,
+    .ef-recipe-card,
+    .ef-product-card,
+    .ef-bonus-card,
+    .ef-testimonial,
+    .ef-benefit-card,
+    .ef-step-card,
+    .ef-decision-card {
+      border: 1px solid var(--ef-line);
+      background: var(--ef-white);
+      border-radius: var(--ef-radius);
+      box-shadow: var(--ef-shadow);
+    }
+
+    .ef-media-card {
+      overflow: hidden;
+      transform: rotate(-1deg);
+    }
+
+    .ef-media-card img {
+      width: 100%;
+      min-height: 460px;
+      object-fit: cover;
+      background: linear-gradient(135deg, var(--ef-green-100), var(--ef-soft));
+    }
+
+    .ef-copy p {
+      margin-bottom: 18px;
+      color: var(--ef-muted);
+    }
+
+    .ef-copy .ef-strong-note {
+      max-width: 920px;
+      margin-top: 30px;
+      color: var(--ef-green-950);
+      font-weight: 800;
+    }
+
+    .ef-kicker {
+      display: inline-block;
+      margin-bottom: 14px;
+      color: var(--ef-orange);
+      font-size: 1.2rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+    }
+
+    .ef-highlight-box {
+      margin-top: 30px;
+      padding: 24px 26px;
+      color: var(--ef-green-950);
+      background: var(--ef-green-100);
+      border-left: 6px solid var(--ef-green-600);
+      border-radius: var(--ef-radius);
+      font-weight: 700;
+    }
+
+    .ef-section-heading {
+      max-width: 860px;
+      margin: 0 auto 48px;
+      text-align: center;
+    }
+
+    .ef-section-heading p {
+      max-width: 720px;
+      margin: 16px auto 0;
+      color: var(--ef-muted);
+      font-size: 1.1rem;
+    }
+
+    .ef-section-heading--dark h2,
+    .ef-section--dark h2 {
+      color: var(--ef-white);
+    }
+
+    .ef-section-heading--dark p {
+      color: rgba(255, 255, 255, 0.76);
+    }
+
+    .ef-steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .ef-step-card {
+      position: relative;
+      padding: 34px 28px 30px;
+    }
+
+    .ef-step-card__num {
+      display: grid;
+      width: 52px;
+      height: 52px;
+      margin-bottom: 22px;
+      place-items: center;
+      color: var(--ef-green-950);
+      background: var(--ef-lime);
+      border-radius: 50%;
+      font-family: "Montserrat", Arial, sans-serif;
+      font-size: 1.45rem;
+      font-weight: 900;
+    }
+
+    .ef-step-card p,
+    .ef-benefit-card p,
+    .ef-testimonial p,
+    .ef-recipe-card p,
+    .ef-product-card p,
+    .ef-bonus-card p,
+    .ef-decision-card p {
+      margin-bottom: 0;
+      color: var(--ef-muted);
+    }
+
+    .ef-center-note {
+      max-width: 800px;
+      margin: 42px auto 0;
+      color: var(--ef-green-900);
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .ef-center-cta {
+      display: flex;
+      justify-content: center;
+      margin-top: 32px;
+    }
+
+    .ef-feature-list {
+      display: grid;
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .ef-feature {
+      padding: 22px 24px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid var(--ef-line);
+      border-radius: var(--ef-radius);
+    }
+
+    .ef-feature h3 {
+      margin-bottom: 8px;
+      font-size: 1.05rem;
+    }
+
+    .ef-feature p {
+      margin-bottom: 0;
+    }
+
+    .ef-check-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 28px;
+      color: var(--ef-green-950);
+      font-weight: 700;
+    }
+
+    .ef-demo {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+      align-items: center;
+      gap: 26px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .ef-demo__panel {
+      min-height: 260px;
+      padding: 30px;
+      background: var(--ef-white);
+      border: 1px solid var(--ef-line);
+      border-radius: var(--ef-radius);
+      box-shadow: var(--ef-shadow);
+    }
+
+    .ef-demo__bubble {
+      margin-top: 18px;
+      padding: 22px;
+      color: var(--ef-green-950);
+      background: var(--ef-green-100);
+      border-radius: var(--ef-radius);
+      font-size: 1.16rem;
+      font-weight: 700;
+    }
+
+    .ef-demo__arrow {
+      color: var(--ef-green-700);
+      font-family: "Montserrat", Arial, sans-serif;
+      font-size: 3rem;
+      font-weight: 900;
+    }
+
+    .ef-demo__result {
+      padding: 18px 20px;
+      color: var(--ef-green-950);
+      background: #f8fbf1;
+      border-radius: var(--ef-radius);
+      font-weight: 700;
+    }
+
+    .ef-demo__result ul {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px 18px;
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    .ef-card-grid--recipes {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .ef-recipe-card {
+      overflow: hidden;
+    }
+
+    .ef-recipe-card img,
+    .ef-product-card img,
+    .ef-bonus-card img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      background: linear-gradient(135deg, var(--ef-green-100), var(--ef-soft));
+    }
+
+    .ef-recipe-card__body,
+    .ef-product-card__body {
+      padding: 22px;
+    }
+
+    .ef-recipe-card h3,
+    .ef-product-card h3,
+    .ef-bonus-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+    }
+
+    .ef-recipe-card--wide {
+      grid-column: span 4;
+    }
+
+    .ef-recipe-card--wide > div {
+      display: grid;
+      grid-template-columns: 0.8fr 1fr;
+      align-items: center;
+    }
+
+    .ef-recipe-card--wide img {
+      height: 100%;
+      aspect-ratio: auto;
+    }
+
+    .ef-benefits {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .ef-benefit-card {
+      padding: 28px;
+      min-height: 230px;
+    }
+
+    .ef-benefit-card--wide {
+      grid-column: span 4;
+      min-height: auto;
+      background: var(--ef-green-900);
+    }
+
+    .ef-benefit-card--wide h3,
+    .ef-benefit-card--wide p {
+      color: var(--ef-white);
+    }
+
+    .ef-comparison-section {
+      color: var(--ef-white);
+      background:
+        radial-gradient(circle at 50% 0%, rgba(205, 221, 100, 0.16), transparent 32%),
+        linear-gradient(180deg, var(--ef-green-950), #0f2f20);
+    }
+
+    .ef-comparison-section .ef-section-heading {
+      margin-bottom: 42px;
+    }
+
+    .ef-comparison-section h2 {
+      color: var(--ef-white);
+    }
+
+    .ef-comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .ef-comparison-col {
+      overflow: hidden;
+      padding: 0 0 30px;
+      color: var(--ef-ink);
+      background: var(--ef-white);
+      border: 1px solid rgba(255, 255, 255, 0.38);
+      border-radius: var(--ef-radius);
+      box-shadow: 0 20px 54px rgba(0, 0, 0, 0.18);
+    }
+
+    .ef-comparison-col h3 {
+      margin: 0 0 24px;
+      padding: 16px 20px;
+      color: var(--ef-green-950);
+      background: var(--ef-green-100);
+      font-size: 1.05rem;
+      line-height: 1.2;
+      font-weight: 900;
+    }
+
+    .ef-comparison-col ul {
+      display: grid;
+      gap: 16px;
+      margin: 0;
+      padding: 0 32px 0 48px;
+      color: var(--ef-ink);
+      font-size: 1.3rem;
+      line-height: 1.55;
+    }
+
+    .ef-comparison-col li::marker {
+      color: var(--ef-lime);
+    }
+
+    .ef-comparison-col strong {
+      color: var(--ef-green-950);
+    }
+
+    .ef-testimonials {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .ef-testimonial {
+      padding: 28px;
+    }
+
+    .ef-stars {
+      margin-bottom: 14px;
+      color: var(--ef-yellow);
+      font-size: 1.1rem;
+      letter-spacing: 0.05em;
+    }
+
+    .ef-testimonial strong {
+      display: block;
+      margin-top: 18px;
+    }
+
+    .ef-deliverables {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .ef-product-card {
+      overflow: hidden;
+    }
+
+    .ef-product-card--featured {
+      grid-column: span 3;
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      align-items: stretch;
+      background: var(--ef-green-950);
+    }
+
+    .ef-product-card--featured img {
+      height: 100%;
+      aspect-ratio: auto;
+    }
+
+    .ef-product-card--featured h3,
+    .ef-product-card--featured p {
+      color: var(--ef-white);
+    }
+
+    .ef-product-card--featured .ef-product-card__body {
+      padding: 34px;
+    }
+
+    .ef-mini-demo {
+      display: grid;
+      gap: 10px;
+      margin-top: 22px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: var(--ef-radius);
+    }
+
+    .ef-mini-demo p {
+      margin: 0;
+    }
+
+    .ef-mini-demo strong {
+      color: var(--ef-lime);
+    }
+
+    .ef-deliverables-simple {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .ef-deliverables-simple .ef-section-heading {
+      margin-bottom: 28px;
+      text-align: left;
+    }
+
+    .ef-deliverables-simple .ef-kicker {
+      display: block;
+      margin-bottom: 18px;
+      color: var(--ef-green-950);
+      font-size: 1.15rem;
+      letter-spacing: 0;
+    }
+
+    .ef-deliverables-list {
+      margin: 0;
+      padding: 24px 28px 24px 52px;
+      color: var(--ef-ink);
+      background: var(--ef-white);
+      border: 1px solid var(--ef-line);
+      border-radius: var(--ef-radius);
+      box-shadow: var(--ef-shadow);
+      font-size: 1.3rem;
+      line-height: 1.7;
+    }
+
+    .ef-deliverables-list li + li {
+      margin-top: 12px;
+    }
+
+    .ef-section-img {
+      width: min(100%, 620px);
+      margin: 26px 0 28px;
+      border-radius: var(--ef-radius-lg);
+      box-shadow: var(--ef-shadow);
+      object-fit: cover;
+    }
+
+    .ef-star-bonus {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 34px;
+      background: var(--ef-white);
+      border: 1px solid var(--ef-line);
+      border-radius: var(--ef-radius);
+      box-shadow: var(--ef-shadow);
+    }
+
+    .ef-star-bonus .ef-kicker {
+      display: inline-block;
+      margin-bottom: 28px;
+      color: #075f1d;
+      background: #ffffff;
+      padding: 4px 8px;
+      border-radius: 0;
+      font-size: 1.5rem;
+      letter-spacing: 0;
+      text-decoration: underline;
+    }
+
+    .ef-star-bonus h2 {
+      max-width: 760px;
+      margin-bottom: 24px;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      line-height: 1.18;
+    }
+
+    .ef-star-bonus p {
+      max-width: 860px;
+      color: var(--ef-ink);
+      font-size: 1.08rem;
+      line-height: 1.8;
+    }
+
+    .ef-star-bonus .ef-section-img {
+      margin-top: 28px;
+      margin-bottom: 0;
+    }
+
+    .ef-bonus-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .ef-bonus-card {
+      position: relative;
+      overflow: hidden;
+      padding-bottom: 26px;
+    }
+
+    .ef-bonus-card__tag {
+      display: inline-flex;
+      margin: 24px 24px 12px;
+      padding: 6px 10px;
+      color: var(--ef-green-950);
+      background: var(--ef-lime);
+      border-radius: 999px;
+      font-family: "Montserrat", Arial, sans-serif;
+      font-size: 0.72rem;
+      font-weight: 900;
+    }
+
+    .ef-bonus-card h3,
+    .ef-bonus-card p {
+      padding-inline: 24px;
+    }
+
+    .ef-seasonal-bonuses {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .ef-seasonal-bonuses .ef-section-heading {
+      margin-bottom: 34px;
+      text-align: left;
+    }
+
+    .ef-seasonal-bonuses .ef-section-heading h2 {
+      margin-bottom: 12px;
+    }
+
+    .ef-seasonal-bonuses .ef-section-heading p {
+      margin-inline: 0;
+    }
+
+    .ef-seasonal-block {
+      margin-top: 36px;
+      padding: 28px;
+      color: var(--ef-ink);
+      background: var(--ef-white);
+      border: 1px solid var(--ef-line);
+      border-radius: var(--ef-radius);
+      box-shadow: var(--ef-shadow);
+    }
+
+    .ef-seasonal-block h3 {
+      margin-bottom: 18px;
+      color: var(--ef-green-950);
+      font-size: 1.5rem;
+      text-transform: uppercase;
+    }
+
+    .ef-seasonal-block .ef-seasonal-subtitle {
+      margin-bottom: 26px;
+      color: var(--ef-green-950);
+      font-weight: 800;
+    }
+
+    .ef-seasonal-list {
+      display: grid;
+      gap: 22px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .ef-seasonal-list li {
+      display: grid;
+      gap: 12px;
+      color: var(--ef-muted);
+      line-height: 1.7;
+    }
+
+    .ef-seasonal-list strong {
+      display: block;
+      color: var(--ef-green-950);
+      font-family: "Montserrat", Arial, sans-serif;
+      font-size: 1.5rem;
+      line-height: 1.25;
+    }
+
+    .ef-seasonal-list em {
+      display: block;
+    }
+
+    .ef-seasonal-list img {
+      width: min(100%, 520px);
+      margin-top: 6px;
+      border-radius: var(--ef-radius);
+      box-shadow: 0 14px 34px rgba(24, 59, 40, 0.16);
+    }
+
+    .ef-value-box {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 16px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: var(--ef-radius-lg);
+      backdrop-filter: blur(10px);
+    }
+
+    .ef-value-row,
+    .ef-value-total {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .ef-value-row strong,
+    .ef-value-total strong {
+      color: var(--ef-white);
+      white-space: nowrap;
+    }
+
+    .ef-value-total {
+      align-items: center;
+      margin-top: 8px;
+      color: var(--ef-white);
+      background: rgba(205, 221, 100, 0.15);
+      border: 0;
+      border-radius: var(--ef-radius);
+      font-family: "Montserrat", Arial, sans-serif;
+      font-size: 1.25rem;
+      font-weight: 900;
+    }
+
+    .ef-offer-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.95fr);
+      gap: 36px;
+      align-items: center;
+      padding: clamp(26px, 5vw, 56px);
+      color: var(--ef-white);
+      background:
+        radial-gradient(circle at 100% 0%, rgba(241, 200, 75, 0.26), transparent 30%),
+        linear-gradient(135deg, var(--ef-green-800), var(--ef-green-950));
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: var(--ef-radius-lg);
+      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.28);
+    }
+
+    .ef-offer-card h2,
+    .ef-offer-card p {
+      color: var(--ef-white);
+    }
+
+    .ef-offer-label {
+      display: inline-flex;
+      margin-bottom: 16px;
+      padding: 8px 12px;
+      color: var(--ef-green-950);
+      background: var(--ef-lime);
+      border-radius: 999px;
+      font-family: "Montserrat", Arial, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 900;
+      text-align: center;
+    }
+
+    .ef-offer-card__price {
+      position: relative;
+      display: grid;
+      justify-items: center;
+      padding: 38px 28px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: var(--ef-radius);
+      text-align: center;
+    }
+
+    .ef-price-old {
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, 0.56);
+      font-size: 1.25rem;
+      text-decoration: line-through;
+    }
+
+    .ef-price-new {
+      margin-bottom: 0;
+      color: var(--ef-lime);
+      font-family: "Montserrat", Arial, sans-serif;
+      font-size: clamp(3.8rem, 8vw, 5rem);
+      line-height: 1;
+      font-weight: 900;
+    }
+
+    .ef-price-note {
+      margin: 10px 0 0;
+      color: rgba(255, 255, 255, 0.78);
+      font-weight: 700;
+    }
+
+    .mp-trust-text {
+      display: block;
+      margin-top: 8px;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9rem;
+    }
+
+    .ef-discount-pill {
+      position: absolute;
+      top: -17px;
+      right: 24px;
+      display: grid;
+      min-width: 96px;
+      min-height: 42px;
+      place-items: center;
+      color: var(--ef-green-950);
+      background: var(--ef-yellow);
+      border-radius: 999px;
+      font-family: "Montserrat", Arial, sans-serif;
+      font-weight: 900;
+      transform: rotate(3deg);
+    }
+
+    .checkout-button-v2 {
+      width: 100%;
+      margin-top: 24px;
+      font-size: 1.12rem;
+    }
+
+    .flex {
+      display: flex;
+    }
+
+    .flex-col {
+      flex-direction: column;
+    }
+
+    .gap-4 {
+      gap: 1rem;
+    }
+
+    .w-full {
+      width: 100%;
+    }
+
+    .items-center {
+      align-items: center;
+    }
+
+    .mt-8 {
+      margin-top: 2rem;
+    }
+
+    .m-0 {
+      margin: 0;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-sm {
+      font-size: 1rem;
+    }
+
+    .text-xl {
+      font-size: 1.25rem;
+    }
+
+    .font-black {
+      font-weight: 900;
+    }
+
+    .uppercase {
+      text-transform: uppercase;
+    }
+
+    .ef-guarantee {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: 38px;
+      align-items: center;
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 38px;
+      background: var(--ef-white);
+      border: 1px solid var(--ef-line);
+      border-radius: var(--ef-radius-lg);
+      box-shadow: var(--ef-shadow);
+    }
+
+    .ef-guarantee img {
+      width: 180px;
+      margin: 0 auto;
+      background: var(--ef-green-100);
+      border-radius: 50%;
+    }
+
+    .ef-guarantee p {
+      color: var(--ef-muted);
+    }
+
+    .ef-faq {
+      display: grid;
+      gap: 14px;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    .ef-faq__item {
+      background: var(--ef-white);
+      border: 1px solid var(--ef-line);
+      border-radius: var(--ef-radius);
+      box-shadow: 0 12px 32px rgba(24, 59, 40, 0.08);
+    }
+
+    .ef-faq__item summary {
+      padding: 20px 24px;
+      color: var(--ef-green-950);
+      cursor: pointer;
+      font-family: "Montserrat", Arial, sans-serif;
+      font-weight: 800;
+    }
+
+    .ef-faq__item p {
+      margin: 0;
+      padding: 0 24px 22px;
+      color: var(--ef-muted);
+    }
+
+    .ef-urgency {
+      padding: 32px 0;
+      color: var(--ef-white);
+      background: var(--ef-orange);
+    }
+
+    .ef-urgency__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .ef-urgency p {
+      max-width: 680px;
+      margin: 0;
+      font-size: 1.05rem;
+    }
+
+    .ef-urgency strong {
+      color: var(--ef-white);
+    }
+
+    .ef-decision-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .ef-decision-card {
+      padding: 30px;
+    }
+
+    .ef-decision-card--negative {
+      border-color: rgba(238, 142, 59, 0.35);
+    }
+
+    .ef-decision-card--positive {
+      border-color: rgba(91, 155, 99, 0.45);
+      background: var(--ef-green-100);
+    }
+
+    .ef-final-message {
+      max-width: 850px;
+      margin: 34px auto 0;
+      padding: 28px;
+      color: var(--ef-green-950);
+      background: var(--ef-white);
+      border-radius: var(--ef-radius);
+      box-shadow: var(--ef-shadow);
+      text-align: center;
+    }
+
+    .ef-final-message p {
+      margin: 0;
+      font-size: 1.15rem;
+    }
+
+    .ef-footer {
+      padding: 48px 0 28px;
+      color: rgba(255, 255, 255, 0.78);
+      background: #10271b;
+      text-align: center;
+    }
+
+    .ef-footer__seal {
+      width: 82px;
+      margin: 0 auto 22px;
+      border-radius: 50%;
+    }
+
+    .ef-footer__badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .ef-footer__badges span {
+      padding: 8px 12px;
+      color: var(--ef-green-950);
+      background: var(--ef-lime);
+      border-radius: 999px;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .ef-footer__bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      font-size: 1rem;
+    }
+
+    .ef-footer__bottom p {
+      margin: 0;
+    }
+
+    .ef-footer nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      justify-content: center;
+    }
+
+    .ef-footer a {
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    @media (min-width: 1024px) {
+      .lg\:gap-6 {
+        gap: 1.5rem;
+      }
+
+      .lg\:w-fit {
+        width: fit-content;
+      }
+
+      .lg\:text-2xl {
+        font-size: 1.5rem;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .ef-hero {
+        min-height: auto;
+        padding-top: 70px;
+        background:
+          linear-gradient(180deg, rgba(24, 59, 40, 0.98), rgba(24, 59, 40, 0.94)),
+          linear-gradient(135deg, #265438, #7aa35a);
+      }
+
+      .ef-hero__mobile-img {
+        display: block;
+        width: min(76vw, 430px);
+        margin: 0 auto 24px;
+      }
+
+      .ef-grid--2,
+      .ef-offer-card,
+      .ef-product-card--featured {
+        grid-template-columns: 1fr;
+      }
+
+      .ef-steps,
+      .ef-card-grid--recipes,
+      .ef-benefits,
+      .ef-testimonials,
+      .ef-deliverables,
+      .ef-bonus-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .ef-recipe-card--wide,
+      .ef-benefit-card--wide,
+      .ef-product-card--featured {
+        grid-column: span 2;
+      }
+
+      .ef-product-card--featured img {
+        aspect-ratio: 16 / 9;
+      }
+
+      .ef-demo {
+        grid-template-columns: 1fr;
+      }
+
+      .ef-demo__arrow {
+        transform: rotate(90deg);
+        text-align: center;
+      }
+
+      .ef-urgency__inner,
+      .ef-footer__bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 700px) {
+      body {
+        font-size: 18px;
+      }
+
+      .ef-container {
+        width: min(100% - 28px, var(--ef-container));
+      }
+
+      .ef-section {
+        padding: 64px 0;
+      }
+
+      .ef-hero {
+        padding: 46px 0 78px;
+        text-align: center;
+      }
+
+      .ef-badge {
+        border-radius: var(--ef-radius);
+      }
+
+      .ef-hero__bullets {
+        text-align: left;
+      }
+
+      .ef-hero__actions,
+      .ef-center-cta {
+        justify-content: stretch;
+      }
+
+      .ef-btn,
+      .checkout-button-v2 {
+        width: 100%;
+        padding-inline: 20px;
+      }
+
+      .ef-microcopy {
+        max-width: none;
+        text-align: center;
+      }
+
+      .ef-media-card img {
+        min-height: 320px;
+      }
+
+      .ef-steps,
+      .ef-card-grid--recipes,
+      .ef-benefits,
+      .ef-testimonials,
+      .ef-deliverables,
+      .ef-bonus-grid,
+      .ef-decision-grid,
+      .ef-recipe-card--wide > div,
+      .ef-guarantee {
+        grid-template-columns: 1fr;
+      }
+
+      .ef-recipe-card--wide,
+      .ef-benefit-card--wide,
+      .ef-product-card--featured {
+        grid-column: auto;
+      }
+
+      .ef-benefit-card {
+        min-height: auto;
+      }
+
+      .ef-demo__panel {
+        min-height: auto;
+        padding: 24px;
+      }
+
+      .ef-demo__result ul {
+        grid-template-columns: 1fr;
+      }
+
+      .ef-comparison-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ef-comparison-col {
+        border: 1px solid rgba(255, 255, 255, 0.38);
+      }
+
+      .ef-comparison-col ul {
+        padding-inline: 34px 22px;
+      }
+
+      .ef-value-row,
+      .ef-value-total {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .ef-offer-card {
+        padding: 22px;
+      }
+
+      .ef-offer-card__price {
+        padding: 34px 18px 26px;
+      }
+
+      .ef-guarantee {
+        padding: 26px 22px;
+        text-align: center;
+      }
+
+      .ef-guarantee img {
+        width: 140px;
+      }
+    }
+  </style>
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1425031875445669');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1425031875445669&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
+
+
+</head>
+
+<body>
+  <main class="ef-site">
+
+    <!-- HERO -->
+    <section class="ef-hero">
+      <div class="ef-container ef-hero__content">
+        <div class="ef-hero__text">
+          <h1>
+            ¿Ensaladas en invierno? Sí, y no vas a pasar frío.
+          </h1>
+
+          <h2 class="ef-hero__subheadline">
+            ¡100 Recetas de Ensaladas Tan Irresistibles que Te van a Dar Ganas de Comerlas hasta en pleno Invierno!
+          </h2>
+
+          <p class="ef-hero__lead">
+            <em>Con el método de ensaladas en frasco:</em> Invertís 90 minutos un domingo y listo:
+            comés rico, fresco y sano toda la semana, sin cocinar a diario y sin abandonar cuando llega el invierno.
+          </p>
+
+          <img src="./assets/img/hero-objeciones-web.webp" alt="Frascos de ensaladas listas para la semana"
+            class="ef-hero__inline-img" fetchpriority="high" />
+
+          <div class="ef-hero__actions">
+            <a href="#seccion-compra" class="ef-btn ef-btn--primary">
+              SÍ QUIERO LAS RECETAS
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOLOR -->
+    <section class="ef-section ef-section--light">
+      <div class="ef-container">
+        <div class="ef-copy">
+          <span class="ef-kicker">LO QUE LA INDUSTRIA DE LA COMIDA RÁPIDA NO QUIERE QUE SEPAS</span>
+          <h2>¿Por qué no es tu fuerza de voluntad?</h2>
+
+          <p>
+            Hay algo que la industria de la comida rápida entendió hace años y a la mayoría
+            de nosotras nunca nos lo contaron: cuando estás con hambre y cansada, no elegís
+            con la cabeza, elegís con la mano.
+            <strong>Comés lo que esté listo en los primeros segundos.</strong>
+          </p>
+
+          <p>
+            Por eso el delivery y el paquete siempre ganan: están ahí, ya, sin esperar.
+            Y encima los diseñan con la dosis justa de sal, azúcar, grasa y saborizantes
+            para que sean imposibles de soltar.
+          </p>
+
+          <p class="ef-strong-note">
+            <em>El Método de Ensaladas en Frasco les gana en su propio juego: comida sana lista
+              para comer en segundos y con aderezos que la vuelven igual de irresistible,
+              pero de verdad.</em>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- VARIEDAD -->
+    <section class="ef-section ef-section--light">
+      <div class="ef-container">
+        <div class="ef-section-heading">
+          <span class="ef-kicker">VARIEDAD CON PROPÓSITO</span>
+          <h2>100 combinaciones para que comer sano no se sienta aburrido</h2>
+          <p>
+            Dentro del método vas a encontrar recetas organizadas para distintos momentos,
+            gustos y objetivos, con combinaciones que te ayudan a sostener el hábito sin aburrirte.
+          </p>
+        </div>
+
+        <div class="ef-card-grid ef-card-grid--recipes">
+          <article class="ef-recipe-card">
+            <img src="./assets/img/receta 01.jpg" alt="Recetas ligeras y frescas" loading="lazy" />
+            <div class="ef-recipe-card__body">
+              <h3>Ligeras y frescas</h3>
+              <p>
+                Opciones livianas, coloridas y prácticas para días donde querés sentirte
+                más liviana y deshinchada.
+              </p>
+            </div>
+          </article>
+
+          <article class="ef-recipe-card">
+            <img src="./assets/img/receta 21.jpg" alt="Recetas proteicas y rendidoras" loading="lazy" />
+            <div class="ef-recipe-card__body">
+              <h3>Proteicas y rendidoras</h3>
+              <p>
+                Combinaciones con más saciedad para almuerzos o cenas que realmente
+                te dejan satisfecha.
+              </p>
+            </div>
+          </article>
+
+          <article class="ef-recipe-card">
+            <img src="./assets/img/receta 45.jpg" alt="Recetas vegetarianas inteligentes" loading="lazy" />
+            <div class="ef-recipe-card__body">
+              <h3>Vegetarianas inteligentes</h3>
+              <p>
+                Recetas completas, sabrosas y bien armadas para sumar variedad sin
+                depender siempre de lo mismo.
+              </p>
+            </div>
+          </article>
+
+          <article class="ef-recipe-card">
+            <img src="./assets/img/receta 68.jpg" alt="Recetas energéticas y completas" loading="lazy" />
+            <div class="ef-recipe-card__body">
+              <h3>Energéticas y completas</h3>
+              <p>
+                Frascos pensados para acompañarte en días intensos sin caer en improvisaciones.
+              </p>
+            </div>
+          </article>
+
+          <article class="ef-recipe-card ef-recipe-card--wide">
+            <div>
+              <img src="./assets/img/receta 84.jpg" alt="Recetas gourmet sin culpa" loading="lazy" />
+              <div class="ef-recipe-card__body">
+                <h3>Gourmet sin culpa</h3>
+                <p>
+                  Mezclas con sabor, textura y aderezos que hacen que comer saludable
+                  también se disfrute.
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <p class="ef-center-note">
+          No estás comprando “más recetas”. Estás comprando una forma práctica de
+          sostener mejores decisiones durante toda la semana.
+        </p>
+
+        <div class="ef-center-cta">
+          <a href="#seccion-compra" class="ef-btn ef-btn--primary">
+            SÍ, QUIERO COMPRAR AHORA
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- DIFERENCIA -->
+    <section class="ef-section ef-comparison-section">
+      <div class="ef-container">
+        <div class="ef-section-heading">
+          <h2>No es solo un recetario. Es un sistema simple para resolver tu semana.</h2>
+        </div>
+
+        <div class="ef-comparison-grid">
+          <article class="ef-comparison-col">
+            <h3>¿QUÉ LO HACE DIFERENTE?</h3>
+            <ul>
+              <li>
+                Sin freezer ni microondas: lo llevás con vos a cualquier lado y llega intacto.
+              </li>
+              <li>
+                Aderezos caseros que resaltan el sabor y convierten una ensalada simple en un plato con nivel.
+              </li>
+              <li>
+                Queda listo para comer: abrís el frasco y comés, sin preparar nada en el momento.
+              </li>
+              <li>
+                Más de 100 recetas y tips para cada necesidad del día: el calor, el frío, los días exigentes,
+                los detox, los vegetarianos y los gourmet.
+              </li>
+              <li>
+                No hace falta saber cocinar: es solo lavar, trocear, cortar y sumar.
+              </li>
+            </ul>
+          </article>
+
+          <article class="ef-comparison-col">
+            <h3>¿POR QUÉ FUNCIONA?</h3>
+            <ul>
+              <li>
+                El método de conservación y el protocolo de preparación mantienen las hojas verdes como recién
+                compradas durante toda la semana.
+              </li>
+              <li>
+                Los aderezos hacen que comer sano sea un placer y no un sacrificio: por eso no lo abandonás.
+              </li>
+              <li>
+                Al cubrir cada necesidad del día, no te aburrís ni repetís por obligación: sostenés la alimentación
+                los 365 días.
+              </li>
+              <li>
+                Al ser tan simple de armar, cualquiera lo puede sostener en el tiempo, sin depender de saber cocinar.
+              </li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="ef-center-cta">
+          <a href="#seccion-compra" class="ef-btn ef-btn--primary">
+            SÍ QUIERO LAS RECETAS
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section class="ef-section ef-section--soft">
+      <div class="ef-container">
+        <div class="ef-section-heading">
+
+          <h2>Mujeres ocupadas ya lo están usando para dejar de improvisar sus comidas</h2>
+        </div>
+
+        <div class="ef-testimonials">
+          <article class="ef-testimonial">
+            <div class="ef-stars">★★★★★</div>
+            <p>
+              “Antes compraba verduras con buena intención y terminaban echándose a perder.
+              Ahora dejo varios frascos listos el domingo y durante la semana me ahorro
+              un montón de decisiones.”
+            </p>
+            <strong>María, 34 años</strong>
+          </article>
+
+          <article class="ef-testimonial">
+            <div class="ef-stars">★★★★★</div>
+            <p>
+              “Lo que más me sorprendió no fueron solo las recetas, sino el alivio mental
+              de abrir la heladera y ya saber qué voy a comer.”
+            </p>
+            <strong>Carmen, 44 años</strong>
+          </article>
+
+          <article class="ef-testimonial">
+            <div class="ef-stars">★★★★★</div>
+            <p>
+              “La lista automática del súper me ahorró tiempo y también plata. Dejé de
+              comprar de más y de tirar comida.”
+            </p>
+            <strong>Ana, 41 años</strong>
+          </article>
+
+          <article class="ef-testimonial">
+            <div class="ef-stars">★★★★★</div>
+            <p>
+              “Pensé que me iba a dar fiaca sostenerlo, pero justamente como ya está todo
+              pensado, me resultó mucho más fácil de lo que imaginaba.”
+            </p>
+            <strong>Silvina, 53 años</strong>
+          </article>
+        </div>
+      </div>
+
+      <div class="ef-center-cta">
+        <a href="#seccion-compra" class="ef-btn ef-btn--primary">
+          SÍ, YO TAMBIÉN QUIERO MEJORAR
+        </a>
+      </div>
+
+    </section>
+
+    <!-- ENTREGABLES -->
+    <section class="ef-section" id="entregables">
+      <div class="ef-container">
+        <div class="ef-deliverables-simple">
+          <div class="ef-section-heading">
+            <h2>¡Esto es todo lo que hoy te vas a llevar a un precio increíble!</h2>
+          </div>
+
+          <img src="./assets/img/hero-objeciones-web.webp" alt="Frascos de ensaladas listas para la semana"
+            class="ef-section-img" loading="lazy" />
+
+          <span class="ef-kicker">📚 ENTREGABLES</span>
+
+          <ol class="ef-deliverables-list">
+            <li>
+             <strong> LAS RECETAS: Ensaladas en Frasco</strong> 
+
+              <img src="./assets/img/001.webp" alt="100 recetas de ensaladas en frasco" loading="lazy" />
+              
+              <p>100 recetas de ensaladas para comer todo el año.</p></li>
+            </li>
+            <li>
+             <strong> EL MÉTODO: Protocolo de Capas y Conservación</strong> 
+              <img src="./assets/img/002.webp" alt="Recetas energéticas y completas" loading="lazy" />
+              
+              <p>Cocinás una vez. Comés sano toda la semana.</p>
+            </li>
+            <li>
+              <strong>LA MAGIA: Alquimia de Aderezos Saludables</strong> 
+              <img src="./assets/img/003.jpg" alt="Aderezos" loading="lazy" />
+              <p>25 fórmulas maestras para crear cualquier sabor del mundo en 2 minutos.</p>
+            </li>
+            <li>
+             <strong>INFOGRAFÍA: el arte de apilar</strong>
+              <p>Un imagen que grafica la ciencia del método.</p>
+            </li>
+             <li>
+             <strong>ORGANIZADOR DE LISTA DE COMPRAS: El arte de la planificación</strong>
+              <p> Un sistema para recorrer el super en 15 minutos sin comprar de más.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- BONO ESTRELLA -->
+    <section class="ef-section ef-section--soft">
+      <div class="ef-container">
+        <div class="ef-star-bonus">
+          <span class="ef-kicker">06 - BONO ESTRELLA:</span>
+
+          <h2>Mi Ayudante: El asistente que piensa por vos y te deja solo la parte fácil.</h2>
+
+          <p>
+            <strong>Mi Ayudante</strong> es una app interactiva e inteligente, creada especialmente para el método.
+            Vos elegís qué querés comer y ella se encarga del resto: te sugiere las recetas, confirma los aderezos,
+            te arma la lista del súper exacta —sin que sobre ni falte nada— y te guía paso a paso en la producción y
+            el armado de los frascos.
+          </p>
+
+          <p>
+            Es como tener a alguien al lado organizándote la semana: vos solo seguís las indicaciones.
+            Cero cálculos, cero adivinar cuánto comprar, cero tiempo perdido decidiendo. Lo que antes te ocupaba la
+            cabeza, ahora se resuelve en minutos.
+          </p>
+
+          <img src="./assets/img/hero-objeciones-web.webp" alt="Frascos de ensaladas listas para la semana"
+            class="ef-section-img" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <!-- BONOS -->
+    <section class="ef-section ef-section--light">
+      <div class="ef-container">
+        <div class="ef-seasonal-bonuses">
+          <div class="ef-section-heading">
+            <span class="ef-kicker">BONOS EXCLUSIVOS</span>
+            <h2>Además, hoy te llevás estos bonos sin costo adicional.</h2>
+            <p>Un complemento para que en cada estación del año no te falte nada.</p>
+          </div>
+
+          <article class="ef-seasonal-block">
+            <h3>🎁 Bonos optimizados para invierno</h3>
+            <p class="ef-seasonal-subtitle"><em>Conservá tus resultados todo el año</em></p>
+
+            <ul class="ef-seasonal-list">
+              <li>
+                <strong>7 - SOPAS EN FRASCO</strong>
+                <em>Todos los nutrientes llegan a tu cuerpo con mínimo esfuerzo metabólico. Energéticas,
+                  antiinflamatorias y detox, para cerrar el día con la recuperación que necesitás.</em>
+                <img src="./assets/img/007.jpg" alt="Frascos de ensaladas listas para la semana"
+                  loading="lazy" />
+              </li>
+              <li>
+                <strong>8 - TÉS &amp; INFUSIONES METABÓLICAS</strong>
+                <em>Mientras tu comida en frasco cuida tus macronutrientes, tu infusión cuida tu microbioma,
+                  tu hidratación y tu sistema nervioso.</em>
+                <img src="./assets/img/008.jpg" alt="Frascos de ensaladas listas para la semana"
+                  loading="lazy" />
+              </li>
+              <li>
+                <strong>9 - SNACKS SALUDABLES</strong>
+                <em>snacks caseros de preparación rápida para vencer al antojo antes de que él te venza a vos.</em>
+                <img src="./assets/img/009.jpg" alt="Frascos de ensaladas listas para la semana"
+                  loading="lazy" />
+              </li>
+            </ul>
+          </article>
+
+          <article class="ef-seasonal-block">
+            <h3>🎁 Bonos optimizados para verano</h3>
+            <p class="ef-seasonal-subtitle"><em>Acelerá tus resultados</em></p>
+
+            <ul class="ef-seasonal-list">
+              <li>
+                <strong>10 - RESET METABÓLICO</strong>
+                <em>Recetas y combinaciones para arrancar con más enfoque y sentir resultados visibles desde la
+                  primera semana.</em>
+                <img src="./assets/img/010.jpg" alt="Frascos de ensaladas listas para la semana"
+                  loading="lazy" />
+              </li>
+              <li>
+                <strong>11 - ESCUDO DE DEFENSAS</strong>
+                <em>Pequeñas dosis concentradas de ingredientes naturales para tomar de un trago y blindar tu sistema
+                  inmune.</em>
+                <img src="./assets/img/011.jpg" alt="Frascos de ensaladas listas para la semana"
+                  loading="lazy" />
+              </li>
+              <li>
+                <strong>12 - HIDRATACIÓN SABORIZADA 24/7</strong>
+                <em>Ideas simples para tomar más agua y dejar atrás bebidas azucaradas sin sentirlo como sacrificio.</em>
+                <img src="./assets/img/012.jpg" alt="Frascos de ensaladas listas para la semana"
+                  loading="lazy" />
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALOR -->
+    <section class="ef-section ef-section--dark">
+      <div class="ef-container">
+        <div class="ef-section-heading ef-section-heading--dark">
+          <h2>Si compraras cada parte por separado, pagarías mucho más</h2>
+          <p>
+            Entre el recetario principal, la guía de conservación, los aderezos,
+            el planificador inteligente y los bonos, el valor total de este sistema
+            es muy superior al precio de hoy.
+          </p>
+        </div>
+
+        <div class="ef-value-box">
+          <div class="ef-value-row">
+            <span>100 combinaciones estratégicas de ensaladas en frasco</span>
+            <strong>$9.900</strong>
+          </div>
+          <div class="ef-value-row">
+            <span>Protocolo de Capas y Conservación: Método, infografía, organizador</span>
+            <strong>$9000</strong>
+          </div>
+          <div class="ef-value-row">
+            <span>Alquimia de Aderezos Saludables</span>
+            <strong>$6.500</strong>
+          </div>
+          <div class="ef-value-row">
+            <span>Planificador de Compras Inteligente</span>
+            <strong>$14.500</strong>
+          </div>
+          <div class="ef-value-row">
+            <span>6 Bonos exclusivos: Sopas, snacks, infusiones, detox, reset, hidratacion</span>
+            <strong>$25.000</strong>
+          </div>
+
+          <div class="ef-value-total">
+            <span>Valor total del sistema: <br>12 ENTREGABLES</span>
+            <strong>$65.000 ARS</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFERTA -->
+    <section class="ef-section ef-section--offer" id="seccion-compra">
+      <div class="ef-container">
+        <div class="ef-offer-card">
+          <div class="ef-offer-card__copy">
+            <span class="ef-offer-label">OFERTA DE LANZAMIENTO</span>
+            <h2>Hoy podés acceder a todos los EBOOKS y la APP por solo $17.990 pesos argentinos</h2>
+            <p>
+              Un único pago para empezar a organizar tus comidas, ahorrar compras
+              innecesarias y dejar de improvisar durante la semana.
+            </p>
+            <p>
+              Por menos de lo que te cuestan un par de pedidos de delivery o una compra
+              mal hecha que termina en la basura, accedés a un sistema completo que te
+              ayuda a comer mejor con menos esfuerzo.
+            </p>
+          </div>
+
+          <div class="ef-offer-card__price">
+            <p class="ef-price-old">$65.000 ARS</p>
+            <p class="ef-price-new">$17.990</p>
+            <p class="ef-price-note">Pago único · Acceso inmediato</p>
+            <span class="mp-trust-text text-white/70 text-sm">Comprá seguro con Mercado Pago</span>
+
+            <div class="flex flex-col gap-4 lg:gap-6 w-full items-center mt-8">
+              <a href="https://puntoycomastore.com/cart/48263677083876:1?checkout"
+                class="checkout-button-v2 text-xl lg:text-2xl font-black uppercase text-center w-full lg:w-fit">
+                LO QUIERO COMPRAR AHORA
+              </a>
+
+              <p class="ef-microcopy ef-microcopy--light m-0">
+                Acceso inmediato + pago seguro + garantía de 7 días
+              </p>
+            </div>
+
+            <span class="ef-discount-pill">70% OFF</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GARANTIA -->
+    <section class="ef-section ef-section--light">
+      <div class="ef-container">
+        <div class="ef-guarantee">
+          <img src="./assets/img/sello.png" alt="Garantía y compra segura" loading="lazy" />
+          <div>
+            <span class="ef-kicker">GARANTÍA</span>
+            <h2>Probalo sin riesgo durante 7 días</h2>
+            <p>
+              Entrá, explorá el material, revisá las recetas, probá el protocolo de armado
+              y usá el planificador.
+            </p>
+            <p>
+              Si durante los primeros 7 días sentís que este sistema no es para vos,
+              podés pedir el reembolso dentro del plazo de garantía.
+            </p>
+            <p><strong>Queremos que tomes esta decisión con tranquilidad. El riesgo no corre por tu cuenta.</strong></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="ef-section">
+      <div class="ef-container">
+        <div class="ef-section-heading">
+          <span class="ef-kicker">PREGUNTAS FRECUENTES</span>
+          <h2>Lo que probablemente querés saber antes de entrar</h2>
+        </div>
+
+        <div class="ef-faq">
+          <details class="ef-faq__item">
+            <summary>¿Necesito saber cocinar?</summary>
+            <p>
+              No. La mayoría de las recetas son simples de armar y seguir. El sistema está
+              pensado justamente para personas que quieren practicidad, no complejidad.
+            </p>
+          </details>
+
+          <details class="ef-faq__item">
+            <summary>¿Cuánto tiempo me lleva realmente?</summary>
+            <p>
+              La idea es que dediques una sola sesión semanal de entre 60 y 90 minutos
+              para dejar varias comidas adelantadas.
+            </p>
+          </details>
+
+          <details class="ef-faq__item">
+            <summary>¿Las ensaladas duran varios días?</summary>
+            <p>
+              Siguiendo el protocolo de capas y conservación, muchas combinaciones pueden
+              mantenerse en muy buen estado durante varios días en heladera.
+            </p>
+          </details>
+
+          <details class="ef-faq__item">
+            <summary>¿Qué pasa si no tengo frascos todavía?</summary>
+            <p>
+              Podés empezar consiguiendo algunos frascos de vidrio con tapa. En el método
+              vas a entender por qué este formato ayuda tanto en la organización y conservación.
+            </p>
+          </details>
+
+          <details class="ef-faq__item">
+            <summary>¿La IA es difícil de usar?</summary>
+            <p>
+              No. Está pensada para que simplemente indiques qué recetas querés preparar y
+              recibas una lista clara de compras.
+            </p>
+          </details>
+
+          <details class="ef-faq__item">
+            <summary>¿Sirve aunque viva sola?</summary>
+            <p>
+              Sí. De hecho, puede ayudarte mucho a dejar de comprar de más y a resolver tus
+              comidas con menos esfuerzo.
+            </p>
+          </details>
+
+          <details class="ef-faq__item">
+            <summary>¿Voy a comer siempre lo mismo?</summary>
+            <p>
+              No. Justamente una de las fortalezas del método es que tenés 100 combinaciones
+              para variar sabores, ingredientes y estilos.
+            </p>
+          </details>
+
+          <details class="ef-faq__item">
+            <summary>¿Esto me ayuda a bajar de peso?</summary>
+            <p>
+              Este sistema no reemplaza consejo médico ni promete resultados automáticos.
+              Lo que sí hace es ayudarte a comer con más orden, mejorar tus elecciones y
+              sostener una rutina más favorable.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- URGENCIA -->
+    <section class="ef-urgency">
+      <div class="ef-container ef-urgency__inner">
+        <p>
+          <strong>Precio de lanzamiento disponible por tiempo limitado:</strong>
+          cuando termine esta etapa de promoción, el sistema volverá a su precio completo.
+        </p>
+        <a href="#seccion-compra" class="ef-btn ef-btn--secondary">
+          QUIERO APROVECHAR EL PRECIO DE HOY
+        </a>
+      </div>
+    </section>
+
+    <!-- CIERRE -->
+    <section class="ef-section ef-section--light">
+      <div class="ef-container">
+        <div class="ef-section-heading">
+          <h2>Dentro de una semana, tu rutina puede verse muy distinta</h2>
+        </div>
+
+        <div class="ef-decision-grid">
+          <article class="ef-decision-card ef-decision-card--negative">
+            <h3>Escenario A</h3>
+            <p>
+              Seguís como hasta ahora: improvisando, comprando sin orden, tirando ingredientes
+              y resolviendo a último momento.
+            </p>
+          </article>
+
+          <article class="ef-decision-card ef-decision-card--positive">
+            <h3>Escenario B</h3>
+            <p>
+              Dedicás una sola sesión a organizar tus comidas, abrís la heladera durante la
+              semana y ya tenés opciones listas, claras y pensadas para vos.
+            </p>
+          </article>
+        </div>
+
+        <div class="ef-final-message">
+          <p>
+            Eso es lo que realmente estás comprando hoy:
+            <strong>menos caos, menos culpa y más sensación de control sobre tu alimentación.</strong>
+          </p>
+        </div>
+
+        <div class="ef-center-cta">
+          <a href="#seccion-compra" class="ef-btn ef-btn--primary">
+            SÍ, QUIERO EMPEZAR HOY
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="ef-footer">
+    <div class="ef-container">
+      <img src="./assets/img/sello.png" alt="Pago seguro y garantía" class="ef-footer__seal" loading="lazy" />
+
+      <div class="ef-footer__badges">
+        <span>Descarga inmediata</span>
+        <span>Pago 100% seguro</span>
+        <span>Garantía de 7 días</span>
+      </div>
+
+      <div class="ef-footer__bottom">
+        <p>© 2026 Ensaladas en Frasco. Todos los derechos reservados.</p>
+        <nav>
+          <a href="#">Términos y Condiciones</a>
+          <a href="#">Política de Privacidad</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
