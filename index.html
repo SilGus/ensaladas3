@@ -206,6 +206,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       max-width: 760px;
     }
 
+    .ef-hero__eyebrow {
+      margin: 0 0 18px;
+      color: var(--ef-yellow);
+      font-family: "Montserrat", Arial, sans-serif;
+      font-size: clamp(1rem, 1.8vw, 1.3rem);
+      line-height: 1.15;
+      font-weight: 900;
+      letter-spacing: 0.055em;
+      text-transform: uppercase;
+    }
+
     .ef-badge {
       display: inline-flex;
       max-width: 720px;
@@ -1377,6 +1388,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         text-align: center;
       }
 
+      .ef-hero__eyebrow {
+        margin-bottom: 14px;
+        font-size: 0.95rem;
+        letter-spacing: 0.035em;
+      }
+
       .ef-badge {
         border-radius: var(--ef-radius);
       }
@@ -1490,16 +1507,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <section class="ef-hero">
       <div class="ef-container ef-hero__content">
         <div class="ef-hero__text">
+          <p class="ef-hero__eyebrow">MÉTODO DE LAS ENSALADAS EN FRASCO</p>
+
           <h1>
-            Cocino un solo día. Como algo distinto cada día. Y dejé de gastar $180.000 por mes en almuerzos.
+            Cociná un solo día. Comé algo distinto cada día. Y dejá de gastar $250.000 por mes en almuerzos que no te hacen bien.
           </h1>
 
           <h2 class="ef-hero__subheadline">
-          100 recetas, 25 aderezos y el Método de las Capas. Armás varios frascos el domingo y comés fresco toda la semana, sin cocinar a diario y sin aburrirte al tercer día. 
+            El método contiene: 100 recetas de ensaladas, 25 de aderezos y el Método de las Capas. Armás varios frascos el domingo y comés fresco toda la semana, sin cocinar a diario y sin aburrirte al tercer día.
           </h2>
 
           <p class="ef-hero__lead">
-            Yo gastaba $180.000 por mes en almuerzos. <em>Con el método de ensaladas en frasco:</em>  Hoy como mejor que con cualquier delivery chatarra.
+            Yo gastaba $250.000 por mes en almuerzos chatarra y hoy como mejor que nunca y mantengo mi talle M sin problema.
           </p>
 
           <img src="./assets/img/hero-objeciones-web.webp" alt="Frascos de ensaladas listas para la semana"
@@ -1959,12 +1978,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </section>
 
     <!-- OFERTA -->
-    <section class="ef-section ef-section--offer" id="seccion-compra">
+    <section class="ef-section ef-section--offer">
       <div class="ef-container">
         <div class="ef-offer-card">
           <div class="ef-offer-card__copy">
             <span class="ef-offer-label">OFERTA DE LANZAMIENTO</span>
-            <h2>Hoy podés acceder a todos los EBOOKS y la APP por un precio lanzamiento increíble</h2>
+            <h2 id="seccion-compra">Hoy podés acceder a todos los EBOOKS y la APP por un precio lanzamiento increíble</h2>
             <p>
               Un único pago para empezar a organizar tus comidas, ahorrar compras
               innecesarias y dejar de improvisar durante la semana.
