@@ -1510,7 +1510,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p class="ef-hero__eyebrow">MÉTODO DE LAS ENSALADAS EN FRASCO</p>
 
           <h1>
-            Cociná un solo día. Comé algo distinto cada día. Y dejá de gastar $250.000 por mes en almuerzos que no te hacen bien.
+            Organizá tus comidas saludables de toda la semana en frascos, en un solo día y sin volver a preguntarte 'qué como hoy'
           </h1>
 
           <h2 class="ef-hero__subheadline">
@@ -1977,13 +1977,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </section>
 
-    <!-- OFERTA -->
-    <section class="ef-section ef-section--offer">
+   <!-- OFERTA -->
+    <section id="seccion-compra" class="ef-section ef-section--offer">
       <div class="ef-container">
         <div class="ef-offer-card">
           <div class="ef-offer-card__copy">
             <span class="ef-offer-label">OFERTA DE LANZAMIENTO</span>
-            <h2 id="seccion-compra">Hoy podés acceder a todos los EBOOKS y la APP por un precio lanzamiento increíble</h2>
+            <h2>Hoy podés acceder a todos los EBOOKS y la APP por un precio lanzamiento increíble</h2>
             <p>
               Un único pago para empezar a organizar tus comidas, ahorrar compras
               innecesarias y dejar de improvisar durante la semana.
@@ -2189,6 +2189,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
   </footer>
+
+  <script>
+    document.querySelectorAll('a[href="#seccion-compra"]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.getElementById('seccion-compra');
+        if (target) {
+          // Calcula la posición real en el momento del toque
+          const yOffset = -20; // Margen de separación superior
+          const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          
+          window.scrollTo({
+            top: y,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+</body>
 </body>
 
 </html>
